@@ -1,0 +1,11 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  ruby:
+    version: 2.2.3
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - sh -e ./script/deploy.sh

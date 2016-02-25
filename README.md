@@ -1,0 +1,1 @@
+# CircleCi to Hatena blog
