@@ -1,5 +1,7 @@
+export LESSCHARSET=utf-8
 script_dir=$(cd $(dirname $0); pwd)
-filepath=`git log --name-status -p -1 | egrep "^[AM]\s+\"?articles\/.*\.md" | awk '{print $2}' | head -1 | sed -e 's/^\"//g' | sed -e 's/\"$//g'`
+filepath=`printf "$(git log --name-status -p -2)" | egrep "^[AM]\s+\"?articles\/.*\.md" | awk '{print $2}' | head -1 | sed -e 's/^\"//g' | sed -e 's/\"$//g'`
+
 # これで指定されたファイルが実行される
 if [ -n "${filepath}" ]; then
   echo "deploy file is ${filepath}"

@@ -13,7 +13,10 @@ class FotoLife
     )
   end
 
-  def upload(file_path)
+  # 画像をはてなフォトライフにアップロードする
+  # @param file_path [String] 画像のパス
+  # @return [String] http://cdn-ak.f.st-hatena.com/images/fotolife/k/xxxx/yyyy/zzzzz.jpg
+  def upload_image(file_path)
     title = File.basename(file_path, '.*')
     header = {'Accept'=>'application/xml', 'Content-Type' => 'application/xml'}
     content = Base64.encode64(open(file_path).read)
