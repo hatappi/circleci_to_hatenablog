@@ -1,2 +1,6 @@
 script/config.yml
 script/file.txt
+
+# ignore .bundle
+script/.bundle
+
